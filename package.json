@@ -45,7 +45,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"bits-ui": "^0.21.2",
+		"bits-ui": "^0.21.3",
 		"clsx": "^2.1.0",
 		"cmdk-sv": "^0.0.17",
 		"embla-carousel-svelte": "^8.0.1",
