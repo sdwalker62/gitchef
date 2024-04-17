@@ -43,7 +43,7 @@
 		</div>
 		<div class="mx-2 flex gap-2">
 			{#if isLoggedIn}
-				<Button href="/profile/dalton">My Projects</Button>
+				<Button href="/profile/dalton">My Recipes</Button>
 			{/if}
 			<Menubar.Root>
 				<Menubar.Menu>
