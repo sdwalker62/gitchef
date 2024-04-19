@@ -10,6 +10,7 @@ services:
       - 5432:5432
     volumes:
       - site_db:/var/lib/postgresql/data
+      - ./db_scripts:/home/
       # - /etc/passwd:/etc/passwd:ro
     environment:
       - POSTGRES_PASSWORD=password

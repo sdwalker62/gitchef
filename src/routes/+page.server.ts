@@ -1,18 +1,19 @@
-import { PrismaClient } from '@prisma/client';
+import { db } from '$lib/database';
 
-const prisma = new PrismaClient();
-
-async function main() {
-	const allUsers = await prisma.employees.findMany();
-	console.log(allUsers);
+export async function load() {
+	const employees = await db.employees.findMany();
+	console.log(employees);
+	return {
+		employees: employees[0]
+	};
 }
 
-main()
-	.then(async () => {
-		await prisma.$disconnect();
-	})
-	.catch(async (e) => {
-		console.error(e);
-		await prisma.$disconnect();
-		process.exit(1);
-	});
+// main()
+// 	.then(async () => {
+// 		await db.$disconnect();
+// 	})
+// 	.catch(async (e) => {
+// 		console.error(e);
+// 		await db.$disconnect();
+// 		process.exit(1);
+// 	});
