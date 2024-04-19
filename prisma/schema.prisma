@@ -9,6 +9,7 @@ datasource db {
 
 model recipes {
   id                Int      @id @default(autoincrement())
+  description       String?
   region            String?
   prep_time         Int?
   cook_time         Int?

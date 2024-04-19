@@ -1,5 +1,6 @@
 CREATE TABLE recipes (
     id SERIAL PRIMARY KEY,
+    description TEXT,
     region TEXT,
     prep_time INT,
     cook_time INT,
