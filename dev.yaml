@@ -1,0 +1,35 @@
+version: '3.9'
+
+services:
+  postgres:
+    container_name: postgres
+    image: postgres:latest
+    restart: always
+    # user: 1000:1000 # $: id -u $USER
+    ports:
+      - 5432:5432
+    volumes:
+      - site_db:/var/lib/postgresql/data
+      # - /etc/passwd:/etc/passwd:ro
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_USER=admin
+      - POSTGRES_DB=recipes
+
+  pgadmin4:
+    image: dpage/pgadmin4
+    container_name: pgadmin4
+    restart: always
+    ports:
+      - 5050:80
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=dev@daltonwalker.com
+      - PGADMIN_DEFAULT_PASSWORD=test123
+
+volumes:
+  site_db:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /home/dwalker/dev/gitchef/db
