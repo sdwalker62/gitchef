@@ -36,3 +36,20 @@ npm run build
 You can preview the production build with `npm run preview`.
 
 > To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+
+# Database
+
+## PostgreSQL
+
+This project uses PostgreSQL to store recipe data. The `db_scripts` folder has some basic commands for creating the recipe table and populating it with test data.
+
+We will use Prisma.io for the frontend client. Instructions can be found here:
+https://www.prisma.io/docs/getting-started/setup-prisma/add-to-existing-project/relational-databases-typescript-postgresql
+
+To start Prisma Studio run
+
+```bash
+npx prisma studio
+```
+
+Information on a login page can be found here: https://joyofcode.xyz/sveltekit-authentication-using-cookies

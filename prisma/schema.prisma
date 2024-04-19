@@ -7,13 +7,43 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model employees {
-  id         Int       @id
-  first_name String?   @db.VarChar(50)
-  last_name  String?   @db.VarChar(50)
-  email      String?   @unique @db.VarChar(100)
-  hire_date  DateTime? @db.Date
-  job_title  String?   @db.VarChar(50)
-  department String?   @db.VarChar(50)
-  salary     Decimal?  @db.Decimal(10, 2)
+model recipes {
+  id                Int      @id @default(autoincrement())
+  region            String?
+  prep_time         Int?
+  cook_time         Int?
+  total_time        Int?
+  ingredients       Json?
+  directions        String[]
+  notes             String[]
+  nutrition         Json?
+  proteins          String[]
+  vegetables        String[]
+  fruits            String[]
+  grains            String[]
+  is_vegan          Boolean?
+  is_vegetarian     Boolean?
+  is_gluten_free    Boolean?
+  is_dairy_free     Boolean?
+  is_nut_free       Boolean?
+  is_soy_free       Boolean?
+  is_fish_free      Boolean?
+  is_shellfish_free Boolean?
+  is_pork_free      Boolean?
+  is_red_meat_free  Boolean?
+  is_poultry_free   Boolean?
+  is_grain_free     Boolean?
+  is_egg_free       Boolean?
+  is_sugar_free     Boolean?
+  is_low_sodium     Boolean?
+  is_low_fat        Boolean?
+  is_low_carb       Boolean?
+  is_high_protein   Boolean?
+  is_organic        Boolean?
+  is_paleo          Boolean?
+  is_keto           Boolean?
+  is_favorite       Boolean?
+  servings          Int?
+  rating            Int?
+  necessary_tools   String[]
 }

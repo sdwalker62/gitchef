@@ -1,10 +1,9 @@
 import { db } from '$lib/database';
 
 export async function load() {
-	const employees = await db.employees.findMany();
-	console.log(employees);
+	const recipes = await db.recipes.findMany();
 	return {
-		employees: employees[0]
+		recipes: recipes
 	};
 }
 

@@ -1,6 +1,11 @@
 <script lang="ts">
 	import * as Table from '$lib/components/ui/table/index.js';
 
+	import type { PageData } from './$types';
+
+	export let data: PageData;
+	console.log(data.recipes[0]);
+
 	const invoices = [
 		{
 			invoice: 'INV001',
