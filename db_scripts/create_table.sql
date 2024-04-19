@@ -1,4 +1,4 @@
-CREATE TABLE recipes (
+CREATE TABLE Recipes (
     id SERIAL PRIMARY KEY,
     description TEXT,
     region TEXT,

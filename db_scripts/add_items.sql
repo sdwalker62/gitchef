@@ -1,5 +1,5 @@
 INSERT INTO
-    recipes (
+    Recipes (
         region,
         description,
         prep_time,
@@ -82,7 +82,7 @@ VALUES
     );
 
 INSERT INTO
-    recipes (
+    Recipes (
         region,
         description,
         prep_time,
