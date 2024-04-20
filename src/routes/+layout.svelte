@@ -24,21 +24,8 @@
 			</Button>
 			<div class=" flex items-end px-4">
 				<h1 class="scroll-m-20 align-baseline text-4xl font-normal tracking-tight lg:text-5xl">
-					M
+					Git Chef
 				</h1>
-				<h2
-					class="scroll-m-20 align-baseline text-3xl tracking-tight text-muted-foreground lg:text-4xl"
-				>
-					ithral
-				</h2>
-				<h1 class="scroll-m-20 pl-2 align-baseline text-4xl font-normal tracking-tight lg:text-5xl">
-					L
-				</h1>
-				<h2
-					class="scroll-m-20 px-1 align-baseline text-3xl tracking-tight text-muted-foreground lg:text-4xl"
-				>
-					abs
-				</h2>
 			</div>
 		</div>
 		<div class="mx-2 flex gap-2">

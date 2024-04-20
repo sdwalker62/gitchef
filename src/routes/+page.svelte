@@ -1,75 +1,45 @@
 <script lang="ts">
-	import * as Table from '$lib/components/ui/table/index.js';
+	import * as Tabs from '$lib/components/ui/tabs/index.js';
+	import RecipeSmallCard from '$lib/components/ui/recipe_small_card/RecipeSmallCard.svelte';
 
 	import type { PageData } from './$types';
 
 	export let data: PageData;
-	console.log(data.recipes[0]);
-
-	const invoices = [
-		{
-			invoice: 'INV001',
-			paymentStatus: 'Paid',
-			totalAmount: '$250.00',
-			paymentMethod: 'Credit Card'
-		},
-		{
-			invoice: 'INV002',
-			paymentStatus: 'Pending',
-			totalAmount: '$150.00',
-			paymentMethod: 'PayPal'
-		},
-		{
-			invoice: 'INV003',
-			paymentStatus: 'Unpaid',
-			totalAmount: '$350.00',
-			paymentMethod: 'Bank Transfer'
-		},
-		{
-			invoice: 'INV004',
-			paymentStatus: 'Paid',
-			totalAmount: '$450.00',
-			paymentMethod: 'Credit Card'
-		},
-		{
-			invoice: 'INV005',
-			paymentStatus: 'Paid',
-			totalAmount: '$550.00',
-			paymentMethod: 'PayPal'
-		},
-		{
-			invoice: 'INV006',
-			paymentStatus: 'Pending',
-			totalAmount: '$200.00',
-			paymentMethod: 'Bank Transfer'
-		},
-		{
-			invoice: 'INV007',
-			paymentStatus: 'Unpaid',
-			totalAmount: '$300.00',
-			paymentMethod: 'Credit Card'
-		}
-	];
 </script>
 
-<Table.Root>
-	<Table.Caption>A list of your recent invoices.</Table.Caption>
-	<Table.Header>
-		<Table.Row>
-			<Table.Head class="w-[100px]">Invoice</Table.Head>
-			<Table.Head>Status</Table.Head>
-			<Table.Head>Method</Table.Head>
-			<Table.Head class="text-right">Amount</Table.Head>
-		</Table.Row>
-	</Table.Header>
-	<Table.Body>
-		{#each invoices as invoice, i (i)}
-			<Table.Row>
-				<Table.Cell class="font-medium">{invoice.invoice}</Table.Cell>
-				<Table.Cell>{invoice.paymentStatus}</Table.Cell>
-				<Table.Cell>{invoice.paymentMethod}</Table.Cell>
-				<Table.Cell class="text-right">{invoice.totalAmount}</Table.Cell>
-			</Table.Row>
-		{/each}
-	</Table.Body>
-</Table.Root>
+<Tabs.Root>
+	<Tabs.List class="grid w-full grid-cols-4">
+		<Tabs.Trigger value="all">All</Tabs.Trigger>
+		<Tabs.Trigger value="favorites">Favorites</Tabs.Trigger>
+		<Tabs.Trigger value="recent">Recent</Tabs.Trigger>
+		<Tabs.Trigger value="popular">Popular</Tabs.Trigger>
+	</Tabs.List>
+	<Tabs.Content value="all">
+		<div class="main">
+			{#each data.recipes as recipe}
+				<RecipeSmallCard {recipe} />
+			{/each}
+		</div>
+	</Tabs.Content>
+	<Tabs.Content value="favorites">
+		<div class="main">
+			{#each data.recipes as recipe}
+				<RecipeSmallCard {recipe} />
+			{/each}
+		</div>
+	</Tabs.Content>
+	<Tabs.Content value="recent">
+		<div class="main">
+			{#each data.recipes as recipe}
+				<RecipeSmallCard {recipe} />
+			{/each}
+		</div>
+	</Tabs.Content>
+	<Tabs.Content value="popular">
+		<div class="main">
+			{#each data.recipes as recipe}
+				<RecipeSmallCard {recipe} />
+			{/each}
+		</div>
+	</Tabs.Content>
+</Tabs.Root>

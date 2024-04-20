@@ -48,4 +48,5 @@ model recipes {
   servings          Int?
   rating            Int?
   necessary_tools   String[]
+  name              String?  @unique
 }
