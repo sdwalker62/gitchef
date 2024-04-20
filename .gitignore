@@ -227,13 +227,13 @@ dist
 # Optional stylelint cache
 
 # SvelteKit build / generate output
-!.svelte-kit
+# !.svelte-kit
 
 ### Svelte ###
 # gitignore template for the SvelteKit, frontend web component framework
 # website: https://kit.svelte.dev/
 
-.svelte-kit/
+# .svelte-kit/
 package
 
 ### VisualStudioCode ###
