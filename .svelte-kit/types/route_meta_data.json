@@ -2,5 +2,8 @@
 	"/": [
 		"src/routes/+page.server.ts"
 	],
-	"/profile/[...profile]": []
+	"/profile/[...profile]": [],
+	"/recipes/[...recipe]": [
+		"src/routes/recipes/[...recipe]/+page.server.ts"
+	]
 }

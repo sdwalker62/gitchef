@@ -1,18 +1,9 @@
 import { db } from '$lib/database';
+import type { recipes } from '@prisma/client';
 
 export async function load() {
-	const recipes = await db.recipes.findMany();
+	const dbRecipes: recipes[] = await db.recipes.findMany();
 	return {
-		recipes: recipes
+		recipes: dbRecipes
 	};
 }
-
-// main()
-// 	.then(async () => {
-// 		await db.$disconnect();
-// 	})
-// 	.catch(async (e) => {
-// 		console.error(e);
-// 		await db.$disconnect();
-// 		process.exit(1);
-// 	});
