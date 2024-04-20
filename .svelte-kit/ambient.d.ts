@@ -99,8 +99,6 @@ declare module '$env/static/private' {
 	export const EDITOR: string;
 	export const NODE_ENV: string;
 	export const VIPSHOME: string;
-	export const SSL_CERT_FILE: string;
-	export const SSL_CERT_DIR: string;
 }
 
 /**
@@ -205,8 +203,6 @@ declare module '$env/dynamic/private' {
 		EDITOR: string;
 		NODE_ENV: string;
 		VIPSHOME: string;
-		SSL_CERT_FILE: string;
-		SSL_CERT_DIR: string;
 		[key: `PUBLIC_${string}`]: undefined;
 		[key: `${string}`]: string | undefined;
 	}
