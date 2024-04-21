@@ -14,4 +14,7 @@
 		<Card.Title>{recipe.name}</Card.Title>
 		<Card.Description>{recipe.description}</Card.Description>
 	</Card.Header>
+	<Card.Footer>
+		<p>Card Footer</p>
+	</Card.Footer>
 </Card.Root>

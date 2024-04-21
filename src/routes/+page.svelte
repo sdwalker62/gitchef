@@ -10,7 +10,7 @@
 </script>
 
 <div class="tab-container bg-amber-50 px-2">
-	<Tabs.Root class=" ">
+	<Tabs.Root>
 		<Tabs.List class="grid w-full grid-cols-2 bg-amber-100">
 			<Tabs.Trigger class="data-[state=active]:bg-amber-50 text-navyBlue" value="all"
 				>All</Tabs.Trigger
@@ -20,7 +20,7 @@
 			>
 		</Tabs.List>
 		<Tabs.Content value="all">
-			<div class="bg-amber-50 grid gap-1 sm:grid-cols-1 xl:grid-cols-2">
+			<div class=" bg-amber-50 grid gap-1 sm:grid-cols-1 xl:grid-cols-2">
 				{#each data.recipes as recipe}
 					<a href="/recipes/{recipe.name}">
 						<RecipeSmallCard {recipe} />
@@ -29,7 +29,7 @@
 			</div>
 		</Tabs.Content>
 		<Tabs.Content value="favorites">
-			<div class="bg-amber-50 grid gap-1 sm:grid-cols-1 xl:grid-cols-2">
+			<div class=" bg-amber-50 grid gap-1 sm:grid-cols-1 xl:grid-cols-2">
 				{#each data.recipes as recipe}
 					<RecipeSmallCard {recipe} />
 				{/each}

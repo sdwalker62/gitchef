@@ -17,7 +17,7 @@
 		<enhanced:img
 			src={sign}
 			alt="Git Chef logo"
-			class=" h-full w-[200px] rounded-md object-cover"
+			class=" h-full w-[200px] max-h-[80px] rounded-md object-cover"
 		/>
 		<DarkmodeSwitch />
 	</div>
