@@ -17,15 +17,15 @@
 		<Card.Description>{recipe.description}</Card.Description>
 	</Card.Header>
 	<Card.Footer>
-		<div class="grid grid-cols-4 gap-1">
+		<div class="grid grid-cols-9 gap-1">
 			{#if recipe.is_vegan}
 				<RecipeLabel icon="vegetarian" text="Vegan" />
 			{/if}
 			{#if recipe.is_vegetarian}
 				<RecipeLabel icon="vegetarian" text="Vegetarian" />
 			{/if}
-			{#if recipe.is_gluten_free}
-				<RecipeLabel icon="gluten_free" text="Gluten Free" />
+			{#if recipe.is_gluten_free || recipe.is_grain_free}
+				<RecipeLabel icon="gluten_free" text="Wheat/Gluten Free" />
 			{/if}
 			{#if recipe.is_dairy_free}
 				<RecipeLabel icon="dairy_free" text="Dairy Free" />
@@ -42,47 +42,41 @@
 			{#if !recipe.is_shellfish_free}
 				<RecipeLabel icon="shellfish" text="Contains Shellfish" />
 			{/if}
-			{#if recipe.is_pork_free}
-				<Badge>Pork Free</Badge>
+			{#if !recipe.is_pork_free}
+				<RecipeLabel icon="pork" text="Contains Pork" />
 			{/if}
-			{#if recipe.is_red_meat_free}
-				<Badge>Red Meat Free</Badge>
+			{#if !recipe.is_red_meat_free}
+				<RecipeLabel icon="beef" text="Contains Beef" />
 			{/if}
 			{#if recipe.is_poultry_free}
-				<Badge>Poulty Free</Badge>
-			{/if}
-			{#if recipe.is_grain_free}
-				<Badge>Grain Free</Badge>
-			{/if}
-			{#if recipe.is_egg_free}
-				<Badge>Egg Free</Badge>
+				<RecipeLabel icon="poulty" text="Contains Poulty" />
 			{/if}
 			{#if recipe.is_sugar_free}
-				<Badge>Sugar Free</Badge>
+				<RecipeLabel icon="sugar_free" text="Sugar Free" />
 			{/if}
 			{#if recipe.is_low_sodium}
-				<Badge>Low Sodium</Badge>
+				<RecipeLabel icon="low" text="Low Sodium" />
 			{/if}
 			{#if recipe.is_low_fat}
-				<Badge>Low Fat</Badge>
+				<RecipeLabel icon="low" text="Low Fat" />
 			{/if}
 			{#if recipe.is_low_carb}
-				<Badge>Low Carb</Badge>
+				<RecipeLabel icon="low" text="Low Carb" />
 			{/if}
 			{#if recipe.is_high_protein}
-				<Badge>High Protein</Badge>
+				<RecipeLabel icon="high" text="High Protein" />
 			{/if}
 			{#if recipe.is_organic}
-				<Badge>Organic</Badge>
+				<RecipeLabel icon="organic" text="Organic" />
 			{/if}
-			{#if recipe.is_paleo}
+			<!-- {#if recipe.is_paleo}
 				<Badge>Paleo</Badge>
 			{/if}
 			{#if recipe.is_keto}
 				<Badge>Keto</Badge>
-			{/if}
+			{/if} -->
 			{#if recipe.is_favorite}
-				<Badge>Favorite</Badge>
+				<RecipeLabel icon="favorite" text="Favorited" />
 			{/if}
 		</div>
 	</Card.Footer>

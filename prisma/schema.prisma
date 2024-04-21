@@ -49,4 +49,5 @@ model recipes {
   rating            Int?
   necessary_tools   String[]
   name              String?  @unique
+  is_hot            Boolean?
 }
