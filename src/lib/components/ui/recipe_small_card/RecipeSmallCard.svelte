@@ -9,7 +9,7 @@
 	export let recipe: recipes;
 </script>
 
-<Card.Root>
+<Card.Root class="bg-white border-navyBlue">
 	<Card.Header>
 		<Card.Title>{recipe.name}</Card.Title>
 		<Card.Description>{recipe.description}</Card.Description>

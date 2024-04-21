@@ -9,16 +9,18 @@
 	export let data: PageData;
 </script>
 
-<div class="tab-container bg-amber-50">
+<div class="tab-container bg-amber-50 px-2">
 	<Tabs.Root class=" ">
-		<Tabs.List class="grid w-full grid-cols-2  bg-amber-100">
-			<Tabs.Trigger class="data-[state=active]:bg-amber-200" value="all">All</Tabs.Trigger>
-			<Tabs.Trigger class="data-[state=active]:bg-amber-200" value="favorites"
+		<Tabs.List class="grid w-full grid-cols-2 bg-amber-100">
+			<Tabs.Trigger class="data-[state=active]:bg-amber-50 text-navyBlue" value="all"
+				>All</Tabs.Trigger
+			>
+			<Tabs.Trigger class="data-[state=active]:bg-amber-50 text-navyBlue" value="favorites"
 				>Favorites</Tabs.Trigger
 			>
 		</Tabs.List>
 		<Tabs.Content value="all">
-			<div class=" bg-amber-50 recipe-grid">
+			<div class="bg-amber-50 grid gap-1 sm:grid-cols-1 xl:grid-cols-2">
 				{#each data.recipes as recipe}
 					<a href="/recipes/{recipe.name}">
 						<RecipeSmallCard {recipe} />
@@ -27,7 +29,7 @@
 			</div>
 		</Tabs.Content>
 		<Tabs.Content value="favorites">
-			<div class="recipe-grid">
+			<div class="bg-amber-50 grid gap-1 sm:grid-cols-1 xl:grid-cols-2">
 				{#each data.recipes as recipe}
 					<RecipeSmallCard {recipe} />
 				{/each}
@@ -38,10 +40,9 @@
 
 <style>
 	.recipe-grid {
-		display: grid;
-		grid-template-columns: repeat(5, 1fr);
-		column-gap: 10px;
-		padding: 10px;
+		/* display: grid; */
+		/* grid-template-columns: repeat(5, 1fr); */
+		/* column-gap: 10px; */
 		width: 100%;
 		max-width: 100vw;
 	}
