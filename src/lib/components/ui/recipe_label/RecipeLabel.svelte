@@ -24,7 +24,12 @@
 
 <Tooltip.Root>
 	<Tooltip.Trigger asChild let:builder>
-		<Button builders={[builder]} variant="outline" size="icon" class="bg-navyBlue">
+		<Button
+			builders={[builder]}
+			variant="outline"
+			size="icon"
+			class="dark:bg-nb-900 dark:border-nb-100 bg-nb-700"
+		>
 			{#if icon === 'warning'}
 				<TriangleAlert />
 			{:else if icon === 'vegetarian'}

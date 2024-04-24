@@ -1,5 +1,8 @@
 import type { ColType, TableStructure } from '../../../../routes/api/data/types';
 
+/*
+Translates JS types to SQL types
+*/
 function getDataType(coltype: ColType): string {
 	switch (coltype) {
 		case 'string':
@@ -11,6 +14,9 @@ function getDataType(coltype: ColType): string {
 	}
 }
 
+/*
+Creates a SQL statement from the provided table structure
+*/
 export default function genTabSrc(storageId: string, structure: TableStructure) {
 	let statement = `Create Table ${storageId} (`;
 

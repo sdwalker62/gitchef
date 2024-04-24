@@ -2,6 +2,7 @@
 	"name": "gitchef",
 	"version": "0.0.1",
 	"private": true,
+	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
@@ -14,9 +15,18 @@
 		"test:integration": "playwright test",
 		"test:unit": "vitest",
 		"postinstall": "prisma generate",
-		"migrate:postgres": "dotenv -e .env.proxy -- npx prisma migrate diff --from-empty --to-schema-datamodel prisma/schema.prisma --script > prisma/migrations/0_init/migration.sql"
+		"backend:start": "npx electric-sql start --with-postgres",
+		"backend:stop": "npx electric-sql stop",
+		"backend:up": "npx electric-sql start --with-postgres --detach",
+		"backend:down": "npx electric-sql stop --remove",
+		"client:generate": "npx electric-sql generate",
+		"client:watch": "npx electric-sql generate --watch",
+		"db:migrate": "npx electric-sql with-config \"npx pg-migrations apply --database {{ELECTRIC_PROXY}} --directory ./db/migrations\"",
+		"db:psql": "npx electric-sql psql",
+		"electric:start": "npx electric-sql start"
 	},
 	"devDependencies": {
+		"@databases/pg-migrations": "^5.0.3",
 		"@iconify/json": "^2.2.199",
 		"@playwright/test": "^1.28.1",
 		"@sveltejs/adapter-auto": "^3.0.0",
@@ -47,9 +57,9 @@
 		"vite": "^5.0.3",
 		"vitest": "^1.2.0"
 	},
-	"type": "module",
 	"dependencies": {
-		"@prisma/client": "^5.12.1",
+		"@prisma/client": "^5.13.0",
+		"@prisma/extension-accelerate": "^1.0.0",
 		"@sqlite.org/sqlite-wasm": "^3.45.3-build1",
 		"bits-ui": "^0.21.4",
 		"clsx": "^2.1.0",
@@ -69,7 +79,7 @@
 		"vaul-svelte": "^0.3.0",
 		"vite-plugin-cross-origin-isolation": "^0.1.6",
 		"vite-plugin-mkcert": "^1.17.5",
-		"wa-sqlite": "github:rhashimoto/wa-sqlite",
+		"wa-sqlite": "github:rhashimoto/wa-sqlite#semver:^0.9.8",
 		"zod": "^3.22.4"
 	}
 }

@@ -12,26 +12,32 @@
 	import { Input } from '$lib/components/ui/input/index.js';
 
 	export let data: PageData;
+	console.log(data.recipes[0]);
 </script>
 
-<div class="tab-container bg-amber-50 px-2">
+<div class="tab-container dark:bg-nb-900 bg-amber-50 px-2">
 	<Tabs.Root>
-		<Tabs.List class="grid w-full grid-cols-2 bg-amber-100">
-			<Tabs.Trigger class="data-[state=active]:bg-amber-50 text-navyBlue" value="all"
-				>All</Tabs.Trigger
+		<Tabs.List class="grid w-full grid-cols-2 dark:bg-nb-100 bg-amber-100">
+			<Tabs.Trigger
+				class="dark:data-[state=active]:bg-nb-900 data-[state=active]:bg-amber-50 dark:data-[state=active]:text-nb-100 dark:text-nb-900 text-nb-700"
+				value="all">All</Tabs.Trigger
 			>
-			<Tabs.Trigger class="data-[state=active]:bg-amber-50 text-navyBlue" value="favorites"
-				>Favorites</Tabs.Trigger
+			<Tabs.Trigger
+				class="dark:data-[state=active]:bg-nb-900 data-[state=active]:bg-amber-50 dark:data-[state=active]:text-nb-100 dark:text-nb-900 text-nb-700"
+				value="favorites">Favorites</Tabs.Trigger
 			>
 		</Tabs.List>
-		<Tabs.Content value="all">
+		<Tabs.Content value="all" class="mt-0">
 			<div class="flex flex-col">
-				<div class="flex flex-row gap-1 p-2">
+				<div class="flex flex-row gap-0 px-0 py-2">
 					<!-- Filter -->
 					<Drawer.Root>
 						<Drawer.Trigger asChild let:builder>
-							<Button builders={[builder]} variant="outline" class="bg-primaryBlue text-floralWhite"
-								><Filter class="bg-primaryBlue text-floralWhite" /></Button
+							<Button
+								builders={[builder]}
+								variant="outline"
+								class="dark:bg-nb-900 dark:border-amber-100 bg-primaryBlue text-floralWhite rounded-l-sm rounded-r-none"
+								><Filter class="dark:bg-nb-900 bg-primaryBlue text-floralWhite" /></Button
 							>
 						</Drawer.Trigger>
 						<Drawer.Content class="bg-navyBlue">
@@ -47,8 +53,11 @@
 					<!-- Sort -->
 					<Drawer.Root>
 						<Drawer.Trigger asChild let:builder>
-							<Button builders={[builder]} variant="outline" class="bg-primaryBlue text-floralWhite"
-								><ArrowDownUp class="bg-primaryBlue text-floralWhite" /></Button
+							<Button
+								builders={[builder]}
+								variant="outline"
+								class="dark:bg-nb-900 dark:border-amber-100 bg-primaryBlue text-floralWhite rounded-r-sm rounded-l-none"
+								><ArrowDownUp class="dark:bg-nb-900  bg-primaryBlue text-floralWhite" /></Button
 							>
 						</Drawer.Trigger>
 						<Drawer.Content class="bg-navyBlue">
@@ -65,7 +74,7 @@
 						<Button type="submit" class="bg-primaryBlue">Search</Button>
 					</form>
 				</div>
-				<div class=" bg-amber-50 grid gap-1 sm:grid-cols-1 xl:grid-cols-2">
+				<div class="dark:bg-nb-900 bg-amber-50 grid gap-2 sm:grid-cols-1 xl:grid-cols-2">
 					{#each data.recipes as recipe}
 						<a href="/recipes/{recipe.name}">
 							<RecipeSmallCard {recipe} />
@@ -75,7 +84,7 @@
 			</div>
 		</Tabs.Content>
 		<Tabs.Content value="favorites">
-			<div class=" bg-amber-50 grid gap-1 sm:grid-cols-1 xl:grid-cols-2">
+			<div class=" bg-amber-50 grid gap-2 sm:grid-cols-1 xl:grid-cols-2">
 				{#each data.recipes as recipe}
 					<RecipeSmallCard {recipe} />
 				{/each}
