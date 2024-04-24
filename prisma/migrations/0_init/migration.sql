@@ -1,12 +1,13 @@
 -- CreateTable
 CREATE TABLE "recipes" (
     "id" SERIAL NOT NULL,
+    "description" TEXT,
     "region" TEXT,
     "prep_time" INTEGER,
     "cook_time" INTEGER,
     "total_time" INTEGER,
     "ingredients" JSONB,
-    "directions" TEXT[],
+    "directions" JSONB[],
     "notes" TEXT[],
     "nutrition" JSONB,
     "proteins" TEXT[],
@@ -38,7 +39,13 @@ CREATE TABLE "recipes" (
     "servings" INTEGER,
     "rating" INTEGER,
     "necessary_tools" TEXT[],
+    "name" TEXT,
+    "is_hot" BOOLEAN,
+    "spices" TEXT[],
+    "type" TEXT,
 
     CONSTRAINT "recipes_pkey" PRIMARY KEY ("id")
 );
 
+-- CreateIndex
+CREATE UNIQUE INDEX "recipes_name_key" ON "recipes"("name");

@@ -85,14 +85,6 @@
 </div>
 
 <style>
-	.recipe-grid {
-		/* display: grid; */
-		/* grid-template-columns: repeat(5, 1fr); */
-		/* column-gap: 10px; */
-		width: 100%;
-		max-width: 100vw;
-	}
-
 	.tab-container {
 		width: 100%;
 		height: calc(100vh - 80px);

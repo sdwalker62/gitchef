@@ -13,7 +13,8 @@
 		"format": "prettier --write .",
 		"test:integration": "playwright test",
 		"test:unit": "vitest",
-		"postinstall": "prisma generate"
+		"postinstall": "prisma generate",
+		"migrate:postgres": "dotenv -e .env.proxy -- npx prisma migrate diff --from-empty --to-schema-datamodel prisma/schema.prisma --script > prisma/migrations/0_init/migration.sql"
 	},
 	"devDependencies": {
 		"@iconify/json": "^2.2.199",
@@ -38,7 +39,6 @@
 		"prettier-plugin-tailwindcss": "^0.5.9",
 		"svelte": "^4.2.7",
 		"svelte-check": "^3.6.0",
-		"svelte-flag-icons": "^1.0.3",
 		"sveltekit-superforms": "^2.12.4",
 		"tailwindcss": "^3.3.6",
 		"tslib": "^2.4.1",
@@ -50,9 +50,11 @@
 	"type": "module",
 	"dependencies": {
 		"@prisma/client": "^5.12.1",
+		"@sqlite.org/sqlite-wasm": "^3.45.3-build1",
 		"bits-ui": "^0.21.4",
 		"clsx": "^2.1.0",
 		"cmdk-sv": "^0.0.17",
+		"electric-sql": "^0.10.1",
 		"embla-carousel-svelte": "^8.0.1",
 		"formsnap": "^1.0.0",
 		"lucide-svelte": "^0.367.0",
@@ -60,13 +62,14 @@
 		"paneforge": "^0.0.3",
 		"pg": "^8.11.5",
 		"prisma": "^5.12.1",
-		"svelte-flagpack": "^1.0.0",
 		"svelte-radix": "^1.1.0",
 		"svelte-sonner": "^0.3.21",
-		"svg-country-flags": "^1.2.10",
 		"tailwind-merge": "^2.2.2",
 		"tailwind-variants": "^0.2.1",
 		"vaul-svelte": "^0.3.0",
+		"vite-plugin-cross-origin-isolation": "^0.1.6",
+		"vite-plugin-mkcert": "^1.17.5",
+		"wa-sqlite": "github:rhashimoto/wa-sqlite",
 		"zod": "^3.22.4"
 	}
 }

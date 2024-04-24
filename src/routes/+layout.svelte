@@ -1,9 +1,16 @@
 <script lang="ts">
+	import initWorker from '$lib/sqlite/loadWorker';
+	import { onMount } from 'svelte';
 	import '../app.pcss';
 	import { ModeWatcher } from 'mode-watcher';
 	import logo from '$lib/images/logo.jpg?enhanced';
 	import sign from '$lib/images/light_gitchef_sign.png?enhanced';
 	import DarkmodeSwitch from '$lib/components/ui/darkmode-switch/DarkmodeSwitch.svelte';
+	import { initDb } from '$lib/db/init';
+
+	onMount(async () => {
+		initWorker();
+	});
 </script>
 
 <ModeWatcher defaultMode={'dark'} />
@@ -22,6 +29,7 @@
 		<DarkmodeSwitch />
 	</div>
 </div>
+
 <slot />
 
 <style>

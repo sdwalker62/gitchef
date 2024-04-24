@@ -8,7 +8,7 @@
 	import { Description } from 'formsnap';
 	import { Badge } from '$lib/components/ui/badge/index.js';
 	import RecipeLabel from '../recipe_label/RecipeLabel.svelte';
-	import { Us } from 'svelte-flag-icons';
+	// import { Us } from 'svelte-flag-icons';
 	export let recipe: recipes;
 </script>
 
@@ -17,7 +17,7 @@
 		<Card.Title>
 			<div class="flex flex-row justify-between w-full items-center">
 				{recipe.name}
-				<Us size="15" />
+				<!-- <Us size="15" /> -->
 			</div>
 		</Card.Title>
 
