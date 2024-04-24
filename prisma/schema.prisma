@@ -16,7 +16,7 @@ model recipes {
   cook_time         Int?
   total_time        Int?
   ingredients       Json?
-  directions        String[]
+  directions        Json[]
   notes             String[]
   nutrition         Json?
   proteins          String[]
@@ -50,4 +50,6 @@ model recipes {
   necessary_tools   String[]
   name              String?  @unique
   is_hot            Boolean?
+  spices            String[]
+  type              String?
 }

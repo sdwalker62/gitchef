@@ -8,16 +8,16 @@
 	import { Description } from 'formsnap';
 	import { Badge } from '$lib/components/ui/badge/index.js';
 	import RecipeLabel from '../recipe_label/RecipeLabel.svelte';
-	import { Us } from 'svelte-flag-icons';
+	// import { Us } from 'svelte-flag-icons';
 	export let recipe: recipes;
 </script>
 
-<Card.Root class="bg-white border-navyBlue">
+<Card.Root class="bg-white dark:bg-nb-100/20 dark:border-transparent rounded-sm">
 	<Card.Header>
 		<Card.Title>
 			<div class="flex flex-row justify-between w-full items-center">
 				{recipe.name}
-				<Us size="15" />
+				<!-- <Us size="15" /> -->
 			</div>
 		</Card.Title>
 

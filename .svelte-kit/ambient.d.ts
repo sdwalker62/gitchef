@@ -28,6 +28,8 @@
 declare module '$env/static/private' {
 	export const DATABASE_URL: string;
 	export const DIRECT_URL: string;
+	export const ELECTRIC_SERVICE: string;
+	export const ELECTRIC_PG_PROXY_PORT: string;
 	export const LESSOPEN: string;
 	export const CONDA_PROMPT_MODIFIER: string;
 	export const USER: string;
@@ -97,6 +99,8 @@ declare module '$env/static/private' {
 	export const WSLENV: string;
 	export const INIT_CWD: string;
 	export const EDITOR: string;
+	export const NODE_ENV: string;
+	export const VIPSHOME: string;
 }
 
 /**
@@ -130,6 +134,8 @@ declare module '$env/dynamic/private' {
 	export const env: {
 		DATABASE_URL: string;
 		DIRECT_URL: string;
+		ELECTRIC_SERVICE: string;
+		ELECTRIC_PG_PROXY_PORT: string;
 		LESSOPEN: string;
 		CONDA_PROMPT_MODIFIER: string;
 		USER: string;
@@ -199,6 +205,8 @@ declare module '$env/dynamic/private' {
 		WSLENV: string;
 		INIT_CWD: string;
 		EDITOR: string;
+		NODE_ENV: string;
+		VIPSHOME: string;
 		[key: `PUBLIC_${string}`]: undefined;
 		[key: `${string}`]: string | undefined;
 	}

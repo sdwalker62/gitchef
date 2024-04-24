@@ -49,7 +49,15 @@ const config = {
 					foreground: 'hsl(var(--card-foreground) / <alpha-value>)'
 				},
 				primaryBlue: '#001f3b',
-				navyBlue: '#000035',
+				'nb-100': '#ADADFF',
+				'nb-200': '#7070FF',
+				'nb-300': '#1F1FFF',
+				'nb-400': '#00008F',
+				'nb-500': '#000066',
+				'nb-600': '#000052',
+				'nb-700': '#000035',
+				'nb-800': '#000029',
+				'nb-900': '#000014',
 				floralWhite: '#FCF9ED',
 				lightBlue: '#AAD6EC'
 			},

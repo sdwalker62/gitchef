@@ -2,6 +2,9 @@
 	"/": [
 		"src/routes/+page.server.ts"
 	],
+	"/api/data/recipes_v1/structure": [
+		"src/routes/api/data/recipes_v1/structure/+server.ts"
+	],
 	"/profile/[...profile]": [],
 	"/recipes/[...recipe]": [
 		"src/routes/recipes/[...recipe]/+page.server.ts"
