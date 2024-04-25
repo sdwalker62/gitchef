@@ -48,8 +48,8 @@
 				</Drawer.Content>
 			</Drawer.Root>
 		</div>
-		<Tabs.Content value="all" class="mt-0">
-			<div class="dark:bg-nb-700 bg-amber-50 grid gap-2 sm:grid-cols-1 xl:grid-cols-2 py-2">
+		<Tabs.Content value="all">
+			<div class="dark:bg-nb-700 bg-amber-50 grid gap-2 sm:grid-cols-1 xl:grid-cols-2">
 				{#each data.recipes as recipe}
 					<a href="/recipes/{recipe.name}">
 						<RecipeSmallCard {recipe} />

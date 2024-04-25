@@ -12,7 +12,7 @@
 	export let recipe: recipes;
 </script>
 
-<Card.Root class="bg-white dark:bg-transparent dark:hover:bg-nb-800 dark:border-nb-50/30">
+<Card.Root class="bg-white dark:bg-transparent dark:hover:bg-nb-800 dark:border-nb-50/30 w-full">
 	<Card.Header>
 		<Card.Title>
 			<div class="flex flex-row justify-between w-full items-center">
@@ -21,7 +21,7 @@
 			</div>
 		</Card.Title>
 
-		<Card.Description>{recipe.description}</Card.Description>
+		<Card.Description><p class="card-desc break-words">{recipe.description}</p></Card.Description>
 	</Card.Header>
 	<Card.Footer>
 		<div class="grid grid-cols-9 gap-1">
@@ -88,3 +88,9 @@
 		</div>
 	</Card.Footer>
 </Card.Root>
+
+<style>
+	.card-desc {
+		max-width: calc(100vw - 75px);
+	}
+</style>

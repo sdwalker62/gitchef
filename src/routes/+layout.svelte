@@ -14,8 +14,10 @@
 </script>
 
 <ModeWatcher defaultMode={'dark'} />
-<div class=" w-full top-bar dark:bg-nb-700 bg-amber-50 flex flex-row items-center justify-between">
-	<div id="nav-bar" class="sticky flex w-full items-center justify-between p-2">
+<div
+	class=" w-full top-bar dark:bg-nb-700 bg-amber-50 flex flex-row items-center justify-between p-2"
+>
+	<div id="nav-bar" class=" flex w-full items-center justify-between">
 		<a href="/" class=" m-0 h-[60px] w-[60px] bg-transparent p-0">
 			<enhanced:img src={logo} alt="Git Chef logo" class=" h-full w-full rounded-md object-cover" />
 		</a>
