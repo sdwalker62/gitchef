@@ -14,16 +14,7 @@
 		"format": "prettier --write .",
 		"test:integration": "playwright test",
 		"test:unit": "vitest",
-		"postinstall": "prisma generate",
-		"backend:start": "npx electric-sql start --with-postgres",
-		"backend:stop": "npx electric-sql stop",
-		"backend:up": "npx electric-sql start --with-postgres --detach",
-		"backend:down": "npx electric-sql stop --remove",
-		"client:generate": "npx electric-sql generate",
-		"client:watch": "npx electric-sql generate --watch",
-		"db:migrate": "npx electric-sql with-config \"npx pg-migrations apply --database {{ELECTRIC_PROXY}} --directory ./db/migrations\"",
-		"db:psql": "npx electric-sql psql",
-		"electric:start": "npx electric-sql start"
+		"postinstall": "prisma generate"
 	},
 	"devDependencies": {
 		"@databases/pg-migrations": "^5.0.3",
@@ -47,6 +38,7 @@
 		"prettier": "^3.1.1",
 		"prettier-plugin-svelte": "^3.1.2",
 		"prettier-plugin-tailwindcss": "^0.5.9",
+		"prisma": "^5.13.0",
 		"svelte": "^4.2.7",
 		"svelte-check": "^3.6.0",
 		"sveltekit-superforms": "^2.12.4",
@@ -60,18 +52,15 @@
 	"dependencies": {
 		"@prisma/client": "^5.13.0",
 		"@prisma/extension-accelerate": "^1.0.0",
-		"@sqlite.org/sqlite-wasm": "^3.45.3-build1",
 		"bits-ui": "^0.21.4",
 		"clsx": "^2.1.0",
 		"cmdk-sv": "^0.0.17",
-		"electric-sql": "^0.10.1",
 		"embla-carousel-svelte": "^8.0.1",
 		"formsnap": "^1.0.0",
 		"lucide-svelte": "^0.367.0",
 		"mode-watcher": "^0.3.0",
 		"paneforge": "^0.0.3",
 		"pg": "^8.11.5",
-		"prisma": "^5.12.1",
 		"svelte-radix": "^1.1.0",
 		"svelte-sonner": "^0.3.21",
 		"tailwind-merge": "^2.2.2",
@@ -79,7 +68,6 @@
 		"vaul-svelte": "^0.3.0",
 		"vite-plugin-cross-origin-isolation": "^0.1.6",
 		"vite-plugin-mkcert": "^1.17.5",
-		"wa-sqlite": "github:rhashimoto/wa-sqlite#semver:^0.9.8",
 		"zod": "^3.22.4"
 	}
 }

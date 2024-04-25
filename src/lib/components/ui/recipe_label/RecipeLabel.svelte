@@ -28,7 +28,7 @@
 			builders={[builder]}
 			variant="outline"
 			size="icon"
-			class="dark:bg-nb-900 dark:border-nb-100 bg-nb-700"
+			class="dark:bg-nb-900 dark:border-nb-50/30 bg-nb-700"
 		>
 			{#if icon === 'warning'}
 				<TriangleAlert />

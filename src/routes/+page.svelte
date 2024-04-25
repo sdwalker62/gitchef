@@ -2,6 +2,8 @@
 	import * as Tabs from '$lib/components/ui/tabs/index.js';
 	import RecipeSmallCard from '$lib/components/ui/recipe_small_card/RecipeSmallCard.svelte';
 	import { recipesArr } from '$lib/stores';
+	import { Star } from 'lucide-svelte';
+	import { Search } from 'lucide-svelte';
 	import type { PageData } from './$types';
 	import { onMount } from 'svelte';
 	import type { recipes } from '@prisma/client';
@@ -15,72 +17,44 @@
 	console.log(data.recipes[0]);
 </script>
 
-<div class="tab-container dark:bg-nb-900 bg-amber-50 px-2">
+<div class="tab-container bg-amber-50 dark:bg-nb-700 p-2">
 	<Tabs.Root>
-		<Tabs.List class="grid w-full grid-cols-2 dark:bg-nb-100 bg-amber-100">
-			<Tabs.Trigger
-				class="dark:data-[state=active]:bg-nb-900 data-[state=active]:bg-amber-50 dark:data-[state=active]:text-nb-100 dark:text-nb-900 text-nb-700"
-				value="all">All</Tabs.Trigger
-			>
-			<Tabs.Trigger
-				class="dark:data-[state=active]:bg-nb-900 data-[state=active]:bg-amber-50 dark:data-[state=active]:text-nb-100 dark:text-nb-900 text-nb-700"
-				value="favorites">Favorites</Tabs.Trigger
-			>
-		</Tabs.List>
-		<Tabs.Content value="all" class="mt-0">
-			<div class="flex flex-col">
-				<div class="flex flex-row gap-0 px-0 py-2">
-					<!-- Filter -->
-					<Drawer.Root>
-						<Drawer.Trigger asChild let:builder>
-							<Button
-								builders={[builder]}
-								variant="outline"
-								class="dark:bg-nb-900 dark:border-amber-100 bg-primaryBlue text-floralWhite rounded-l-sm rounded-r-none"
-								><Filter class="dark:bg-nb-900 bg-primaryBlue text-floralWhite" /></Button
-							>
-						</Drawer.Trigger>
-						<Drawer.Content class="bg-navyBlue">
-							<Drawer.Footer>
-								<Button>Submit</Button>
-								<Drawer.Close asChild let:builder>
-									<Button builders={[builder]} variant="outline">Cancel</Button>
-								</Drawer.Close>
-							</Drawer.Footer>
-						</Drawer.Content>
-					</Drawer.Root>
+		<div class="flex flex-row justify-between rounded-md dark:bg-transparent">
+			<Tabs.List class="grid h-full w-[250px] grid-cols-2 dark:bg-nb-50/30 bg-amber-100">
+				<Tabs.Trigger
+					class="h-[30px] text-md dark:data-[state=active]:bg-nb-700 data-[state=active]:bg-amber-50 dark:data-[state=active]:text-floralWhite dark:text-floralWhite dark:text-nb-50 text-nb-700"
+					value="all">All Recipes</Tabs.Trigger
+				>
+				<Tabs.Trigger
+					class="h-[30px] dark:data-[state=active]:bg-nb-700 data-[state=active]:bg-amber-50 dark:data-[state=active]:text-floralWhite dark:text-floralWhite text-nb-700"
+					value="favorites"><Star size={20} /></Tabs.Trigger
+				>
+			</Tabs.List>
 
-					<!-- Sort -->
-					<Drawer.Root>
-						<Drawer.Trigger asChild let:builder>
-							<Button
-								builders={[builder]}
-								variant="outline"
-								class="dark:bg-nb-900 dark:border-amber-100 bg-primaryBlue text-floralWhite rounded-r-sm rounded-l-none"
-								><ArrowDownUp class="dark:bg-nb-900  bg-primaryBlue text-floralWhite" /></Button
-							>
-						</Drawer.Trigger>
-						<Drawer.Content class="bg-navyBlue">
-							<Drawer.Footer>
-								<Button>Submit</Button>
-								<Drawer.Close asChild let:builder>
-									<Button builders={[builder]} variant="outline">Cancel</Button>
-								</Drawer.Close>
-							</Drawer.Footer>
-						</Drawer.Content>
-					</Drawer.Root>
-					<form class="flex w-full max-w-sm items-center space-x-1">
-						<Input type="search" placeholder="Search recipes" />
-						<Button type="submit" class="bg-primaryBlue">Search</Button>
-					</form>
-				</div>
-				<div class="dark:bg-nb-900 bg-amber-50 grid gap-2 sm:grid-cols-1 xl:grid-cols-2">
-					{#each data.recipes as recipe}
-						<a href="/recipes/{recipe.name}">
-							<RecipeSmallCard {recipe} />
-						</a>
-					{/each}
-				</div>
+			<!-- Filter -->
+			<Drawer.Root>
+				<Drawer.Trigger asChild let:builder>
+					<Button builders={[builder]} class="dark:bg-transparent text-floralWhite rounded-md"
+						><Filter class="text-floralWhite" /></Button
+					>
+				</Drawer.Trigger>
+				<Drawer.Content class="bg-navyBlue">
+					<Drawer.Footer>
+						<Button>Submit</Button>
+						<Drawer.Close asChild let:builder>
+							<Button builders={[builder]} variant="outline">Cancel</Button>
+						</Drawer.Close>
+					</Drawer.Footer>
+				</Drawer.Content>
+			</Drawer.Root>
+		</div>
+		<Tabs.Content value="all" class="mt-0">
+			<div class="dark:bg-nb-700 bg-amber-50 grid gap-2 sm:grid-cols-1 xl:grid-cols-2 py-2">
+				{#each data.recipes as recipe}
+					<a href="/recipes/{recipe.name}">
+						<RecipeSmallCard {recipe} />
+					</a>
+				{/each}
 			</div>
 		</Tabs.Content>
 		<Tabs.Content value="favorites">

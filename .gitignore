@@ -256,3 +256,7 @@ package
 .ionide
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,jetbrains+all,node,svelte
+.env*
+.flaskenv*
+!.env.project
+!.env.vault

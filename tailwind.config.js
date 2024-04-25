@@ -49,6 +49,7 @@ const config = {
 					foreground: 'hsl(var(--card-foreground) / <alpha-value>)'
 				},
 				primaryBlue: '#001f3b',
+				'nb-50': '#D6D6FF',
 				'nb-100': '#ADADFF',
 				'nb-200': '#7070FF',
 				'nb-300': '#1F1FFF',
@@ -59,7 +60,9 @@ const config = {
 				'nb-800': '#000029',
 				'nb-900': '#000014',
 				floralWhite: '#FCF9ED',
-				lightBlue: '#AAD6EC'
+				lightBlue: '#AAD6EC',
+				darkGradient:
+					'bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

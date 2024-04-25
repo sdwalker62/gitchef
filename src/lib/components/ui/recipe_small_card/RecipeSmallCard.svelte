@@ -12,7 +12,7 @@
 	export let recipe: recipes;
 </script>
 
-<Card.Root class="bg-white dark:bg-nb-100/20 dark:border-transparent rounded-sm">
+<Card.Root class="bg-white dark:bg-transparent dark:hover:bg-nb-800 dark:border-nb-50/30">
 	<Card.Header>
 		<Card.Title>
 			<div class="flex flex-row justify-between w-full items-center">
